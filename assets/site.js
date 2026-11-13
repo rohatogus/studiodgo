@@ -160,8 +160,10 @@
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
         ${sayfaLogo()}
-        <span class="eyebrow">Bize Ulaşın</span>
-        <h1 class="page-title" style="margin-top:14px">İletişim</h1>
+        <span class="eyebrow">İletişim</span>
+        <h1 class="contact-title">Bize ulaşın</h1>
+        <p class="contact-intro rv">Yeni bir projeniz mi var? Projeniz hakkında konuşmak, bilgi almak ya da teklif istemek için bize e-posta ile yazabilirsiniz. En kısa sürede size dönüş yapacağız.</p>
+        <a class="btn contact-btn rv" href="mailto:${esc(I.eposta)}?subject=${encodeURIComponent("Proje / teklif talebi")}">E-posta gönderin ${AR}</a>
         <div class="contact">
           <div class="rv"><span class="eyebrow">E-posta</span><a class="v" style="display:block" href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></div>
           ${I.telefon ? `<div class="rv"><span class="eyebrow">Telefon</span><a class="v" style="display:block" href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a></div>` : ""}
