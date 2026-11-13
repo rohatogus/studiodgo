@@ -20,8 +20,8 @@ window.SITE = {
   ],
 
   iletisim: {
-    adres: "Adres satırı 1<br>İlçe, İstanbul, Türkiye",
-    telefon: "+90 000 000 00 00",
+    adres: "",   // örn: "Sokak No:1<br>Sarıyer, İstanbul" — boşsa gösterilmez
+    telefon: "", // örn: "+90 212 000 00 00" — boşsa gösterilmez
     eposta: "info@studiodgo.com",
     harita: "" // Google Maps "Yerleştir" bağlantısı (iframe src) — boş bırakılırsa harita gösterilmez
   },
@@ -65,6 +65,34 @@ window.PROJELER = [
       "images/az-house-kuzguncuk/05.jpg",
       "images/az-house-kuzguncuk/06.jpg",
       { src: "images/az-house-kuzguncuk/07.jpg", genis: true }
+    ],
+    aciklama: [],
+    fotograf: ""
+  },
+  {
+    slug: "eu-house-ulus",
+    ad: "EU House Ulus",
+    yil: "",
+    konum: "Ulus, İstanbul",
+    kategori: "İç Mimarlık",
+    alan: "",
+    durum: "",
+    kapak: "images/eu-house-ulus/kapak.jpg",
+    galeri: [
+      { src: "images/eu-house-ulus/01.jpg", genis: true },
+      "images/eu-house-ulus/02.jpg",
+      "images/eu-house-ulus/03.jpg",
+      { src: "images/eu-house-ulus/04.jpg", genis: true },
+      "images/eu-house-ulus/05.jpg",
+      "images/eu-house-ulus/06.jpg",
+      { src: "images/eu-house-ulus/07.jpg", genis: true },
+      "images/eu-house-ulus/08.jpg",
+      "images/eu-house-ulus/09.jpg",
+      { src: "images/eu-house-ulus/10.jpg", genis: true },
+      { src: "images/eu-house-ulus/11.jpg", genis: true },
+      { src: "images/eu-house-ulus/12.jpg", genis: true },
+      "images/eu-house-ulus/13.jpg",
+      "images/eu-house-ulus/14.jpg"
     ],
     aciklama: [],
     fotograf: ""

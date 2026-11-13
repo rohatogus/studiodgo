@@ -33,8 +33,8 @@
     <footer class="ftr">
       <div class="ftr-top">
         <div><a href="index.html" class="logo flogo" aria-label="${esc(S.ad)}">${window.LOGO_TAM}</a><p style="margin-top:18px;color:#7f7c74">${esc(S.slogan)}</p></div>
-        <div><h5>Adres</h5><p>${I.adres}</p></div>
-        <div><h5>İletişim</h5><p><a href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a><br><a href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></p></div>
+        <div>${I.adres ? `<h5>Adres</h5><p>${I.adres}</p>` : ""}</div>
+        <div><h5>İletişim</h5><p>${I.telefon ? `<a href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a><br>` : ""}<a href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></p></div>
         <div><h5>Takip Edin</h5><p>${sosyalLinkler.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join("<br>")}</p></div>
       </div>
       <div class="ftr-bot"><span>© ${new Date().getFullYear()} ${esc(S.ad)}. Tüm hakları saklıdır.</span><a href="#" onclick="scrollTo({top:0});return false">Yukarı ↑</a></div>
@@ -152,9 +152,9 @@
         <span class="eyebrow">Bize Ulaşın</span>
         <h1 class="page-title" style="margin-top:14px">İletişim</h1>
         <div class="contact">
-          <div class="rv"><span class="eyebrow">Adres</span><p class="v">${I.adres}</p></div>
-          <div class="rv"><span class="eyebrow">Telefon</span><a class="v" style="display:block" href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a></div>
           <div class="rv"><span class="eyebrow">E-posta</span><a class="v" style="display:block" href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></div>
+          ${I.telefon ? `<div class="rv"><span class="eyebrow">Telefon</span><a class="v" style="display:block" href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a></div>` : ""}
+          ${I.adres ? `<div class="rv"><span class="eyebrow">Adres</span><p class="v">${I.adres}</p></div>` : ""}
         </div>
         ${I.harita ? `<div class="map rv"><iframe src="${esc(I.harita)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>` : ""}
       </section>`;
