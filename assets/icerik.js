@@ -10,13 +10,27 @@ window.SITE = {
   // Ana sayfadaki büyük görselde gösterilecek projenin "slug" değeri
   oneCikanProje: "az-house-kuzguncuk",
 
-  hakkimizda: [
-    "Buraya ofisinizi tanıtan ilk paragrafı yazın: ne zaman kuruldu, hangi alanlarda çalışıyorsunuz.",
-    "İkinci paragraf: tasarım yaklaşımınız, malzeme ve bağlama dair düşünceleriniz.",
-    "Üçüncü paragraf (isteğe bağlı): ekip, ödüller, yayınlar."
-  ],
+  hakkimizda: {
+    baslik: "İki disiplin. Ortak bir vizyon.",
+    giris: "Studio DGO, mimarlık ve mühendisliğin farklı bakış açılarını ortak bir tasarım anlayışında buluşturan, İstanbul merkezli bağımsız bir tasarım stüdyosudur.",
+    paragraflar: [
+      "Mimar Defne Gündoğdu Oğus ve mühendis Hüseyin Rohat Oğus tarafından kurulan Studio DGO, yaratıcı düşünceyi teknik uzmanlıkla bir araya getirerek estetik, işlevsellik ve uygulama kalitesini bir bütün olarak ele alır.",
+      "İstanbul Bilgi Üniversitesi Mimarlık Bölümü mezunu Defne Gündoğdu Oğus, Türkiye ve Hollanda'da edindiği profesyonel deneyimlerle mimari tasarım, iç mekân tasarımı ve proje koordinasyonu alanlarında uzmanlaşmıştır. Farklı kültürler ve çalışma disiplinleri içerisinde geliştirdiği bakış açısı, özgün tasarım anlayışını detaylara gösterilen özen ve güçlü bir mekânsal duyarlılıkla birleştirir.",
+      "Yıldız Teknik Üniversitesi mezunu Hüseyin Rohat Oğus ise gemi inşa ve yat sektöründe edindiği mühendislik ve proje yönetimi deneyimiyle stüdyonun teknik yaklaşımına yön verir. Uluslararası standartlarda yürütülen, yüksek hassasiyet ve disiplinler arası koordinasyon gerektiren projelerde kazandığı uzmanlık, tasarım fikirlerinin uygulanabilir ve nitelikli çözümlere dönüşmesini destekler."
+    ],
+    yaklasimBaslik: "Tasarıma yaklaşımımız",
+    yaklasimGiris: "Bizim için iyi tasarım, yalnızca estetik bir sonuç değil; düşünce, işlev ve teknik doğruluğun dengeli bir birlikteliğidir.",
+    yaklasim: [
+      "Her projeye kendine özgü bir kimlik kazandırmayı amaçlıyor; mekânın karakterini, kullanıcıların ihtiyaçlarını ve malzemenin potansiyelini tasarım sürecinin merkezine yerleştiriyoruz.",
+      "Mimarlığın yaratıcı yaklaşımını mühendisliğin analitik bakış açısıyla birleştirerek, ilk fikirden son uygulama detayına kadar her aşamada bütüncül bir tasarım anlayışı benimsiyoruz.",
+      "Amacımız, yalnızca bugünün ihtiyaçlarına cevap veren değil, zamanla değerini ve karakterini koruyan mekânlar tasarlamak."
+    ],
+    slogan: "Designed with intention. Built with precision."
+  },
+  // Kurucular — foto eklenirse görsel de gösterilir
   ekip: [
-    // { ad: "Ad Soyad", unvan: "Kurucu Mimar", foto: "images/ekip/ad-soyad.jpg" },
+    { ad: "Defne Gündoğdu Oğus", unvan: "Kurucu · Mimar", foto: "" },
+    { ad: "Hüseyin Rohat Oğus", unvan: "Kurucu · Mühendis", foto: "" }
   ],
 
   iletisim: {

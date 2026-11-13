@@ -135,18 +135,23 @@
 
   /* ---------- HAKKIMIZDA ---------- */
   if (sayfa === "hakkimizda") {
-    const [ilk, ...diger] = S.hakkimizda;
+    const H = S.hakkimizda;
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
         ${sayfaLogo()}
-        <span class="eyebrow">Ofis</span>
-        <h1 class="page-title" style="margin-top:14px">Hakkımızda</h1>
+        <span class="eyebrow">Hakkımızda</span>
+        <h1 class="page-title" style="margin-top:14px">${esc(H.baslik)}</h1>
         <div class="about">
-          <p class="lead rv">${esc(ilk)}</p>
-          <div class="body rv">${diger.map(t => `<p>${esc(t)}</p>`).join("")}</div>
+          <p class="lead rv">${esc(H.giris)}</p>
+          <div class="body rv">${H.paragraflar.map(t => `<p>${esc(t)}</p>`).join("")}</div>
         </div>
-        ${S.ekip.length ? `<div class="sec-head rv" style="margin-top:clamp(70px,9vw,120px)"><h2>Ekip</h2></div>
-        <div class="team">${S.ekip.map(e => `<div class="rv">${gorsel(e.foto, e.ad)}<h4>${esc(e.ad)}</h4><span>${esc(e.unvan)}</span></div>`).join("")}</div>` : ""}
+        ${S.ekip.length ? `<div class="team">${S.ekip.map(e => `<div class="rv">${e.foto ? gorsel(e.foto, e.ad) : ""}<h4>${esc(e.ad)}</h4><span>${esc(e.unvan)}</span></div>`).join("")}</div>` : ""}
+        <div class="sec-head rv" style="margin-top:clamp(80px,10vw,140px)"><h2>${esc(H.yaklasimBaslik)}</h2></div>
+        <div class="about">
+          <p class="lead rv">${esc(H.yaklasimGiris)}</p>
+          <div class="body rv">${H.yaklasim.map(t => `<p>${esc(t)}</p>`).join("")}</div>
+        </div>
+        <div class="motto rv"><span class="eyebrow">${esc(S.ad)}</span><p>${esc(H.slogan)}</p></div>
       </section>`;
   }
 
