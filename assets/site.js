@@ -17,7 +17,7 @@
   const overHero = sayfa === "anasayfa" || sayfa === "proje";
   document.body.insertAdjacentHTML("afterbegin", `
     <header class="hdr ${overHero ? "over" : "solid"}">
-      <a href="index.html" class="logo" aria-label="${esc(S.ad)}">${window.LOGO_ISARET}</a>
+      ${sayfa === "anasayfa" ? `<span aria-hidden="true"></span>` : `<a href="index.html" class="logo" aria-label="Ana sayfaya dön" title="Ana sayfa">${window.LOGO_ISARET}</a>`}
       <nav class="nav"><a href="index.html" class="mlogo" aria-label="${esc(S.ad)}">${window.LOGO_TAM}</a>${navItems.map(([h, t, k]) => `<a href="${h}" class="${k === sayfa || (k === "projeler" && sayfa === "proje") ? "on" : ""}">${t}</a>`).join("")}</nav>
       <button class="burger" aria-label="Menü"><span></span><span></span></button>
     </header>`);
