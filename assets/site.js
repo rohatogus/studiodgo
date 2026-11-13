@@ -37,8 +37,10 @@
         <div><h5>İletişim</h5><p>${I.telefon ? `<a href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a><br>` : ""}<a href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></p></div>
         <div><h5>Takip Edin</h5><p>${sosyalLinkler.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join("<br>")}</p></div>
       </div>
-      <div class="ftr-bot"><span>© ${new Date().getFullYear()} ${esc(S.ad)}. Tüm hakları saklıdır.</span><a href="#" onclick="scrollTo({top:0});return false">Yukarı ↑</a></div>
+      <div class="ftr-bot"><span>© ${new Date().getFullYear()} ${esc(S.ad)}. Tüm hakları saklıdır.</span><button type="button" class="totop" aria-label="Sayfanın başına dön">↑</button></div>
     </footer>`);
+
+  $(".totop").onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const main = $("main");
 
