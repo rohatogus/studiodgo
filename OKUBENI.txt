@@ -1,0 +1,19 @@
+STUDIO DGO WEB SİTESİ — KULLANIM
+
+* Logo: images/logo.svg (tam logo) ve images/logo-isaret.svg (sadece "dgo").
+  Sitede assets/logo.js üzerinden kullanılır; renk sayfaya göre otomatik siyah/beyaz olur.
+
+1) TÜM İÇERİK TEK DOSYADA: assets/icerik.js
+   - Ofis adı, slogan, Hakkımızda metni, ekip, adres/telefon/e-posta, sosyal medya
+   - PROJELER listesi: her proje için bir blok kopyalayıp doldurun.
+
+2) GÖRSELLER: images/ klasörüne proje adıyla klasör açın.
+   Örn: images/elmali-evi/kapak.jpg, images/elmali-evi/01.jpg ...
+   Görseller ~2000px genişlik ve JPG (300-500 KB) olursa site hızlı açılır.
+   Görsel yoksa yerinde gri kutu görünür.
+
+3) YAYINLAMA: Klasörün tamamını (index.html dahil) hosting'inizin
+   public_html / www klasörüne FTP ile yükleyin. Başka bir kurulum gerekmez.
+
+4) Ana sayfadaki büyük görsel: icerik.js içindeki "oneCikanProje" değerine
+   o projenin slug'ını yazın.

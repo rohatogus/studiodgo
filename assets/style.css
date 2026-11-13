@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#f5f4f0;
+  --ink:#151515;
+  --muted:#7a776f;
+  --line:#dbd8d0;
+  --ph:#d9d6ce;
+  --pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---------- görsel yer tutucu ---------- */
+.ph{position:relative;overflow:hidden;background:var(--ph)}
+.ph::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a9a59c;z-index:0}
+.ph img{position:relative;z-index:1;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity .8s}
+.ph img.loading{opacity:0}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);transition:background .4s,color .4s,padding .4s}
+.hdr.solid{background:rgba(245,244,240,.94);backdrop-filter:blur(8px);color:var(--ink);padding:16px var(--pad);border-bottom:1px solid var(--line)}
+.hdr.over{color:#fff}
+.logo{display:block;line-height:0}
+.logo svg{height:40px;width:auto;overflow:visible}
+.logo svg path[stroke]{stroke-width:1.6px;vector-effect:non-scaling-stroke}
+.hdr.solid .logo svg{height:34px}
+.hlogo{line-height:0}
+.hlogo svg{height:clamp(130px,24vh,250px);width:auto;overflow:visible}
+.hlogo svg path[stroke]{stroke-width:2.2px;vector-effect:non-scaling-stroke}
+.flogo svg{height:96px}
+.flogo svg path[stroke]{stroke-width:1.4px}
+.nav{display:flex;gap:38px}
+.nav a{font-size:12px;letter-spacing:.22em;font-weight:500;position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:currentColor;transition:width .35s}
+.nav a:hover::after,.nav a.on::after{width:100%}
+.burger{display:none;background:none;border:0;color:inherit;cursor:pointer;width:28px;height:18px;position:relative}
+.burger span{position:absolute;left:0;right:0;height:1px;background:currentColor;transition:.3s}
+.burger span:nth-child(1){top:3px}.burger span:nth-child(2){bottom:3px}
+.menu-open .burger span:nth-child(1){top:8px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){bottom:9px;transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;min-height:560px;color:#fff}
+.hero .ph{position:absolute;inset:0;background:#2b2a27}
+.hero .ph::after{color:#55534d}
+.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
+.hero-txt{position:absolute;z-index:3;left:var(--pad);right:var(--pad);bottom:clamp(36px,7vh,72px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.hero h1{font-weight:300;font-size:clamp(40px,8vw,120px);letter-spacing:.06em;line-height:.95}
+.hero .tag{margin-top:14px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid currentColor;padding:14px 22px;transition:background .3s,color .3s}
+.hero .btn:hover{background:#fff;color:var(--ink)}
+.btn .ar{transition:transform .3s}.btn:hover .ar{transform:translateX(5px)}
+.scroll-cue{position:absolute;z-index:3;left:50%;bottom:22px;width:1px;height:42px;background:rgba(255,255,255,.5);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-42px;width:1px;height:42px;background:#fff;animation:cue 2.2s infinite}
+@keyframes cue{to{top:42px}}
+
+/* ---------- genel bölüm ---------- */
+.wrap{padding:0 var(--pad)}
+.sec{padding-top:clamp(70px,11vw,150px);padding-bottom:clamp(70px,11vw,150px)}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
+.sec-head h2{font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:.04em}
+.page-top{padding-top:clamp(130px,18vh,200px)}
+.page-title{font-weight:300;font-size:clamp(40px,7vw,96px);letter-spacing:.03em;line-height:1}
+
+/* ---------- ana sayfa proje listesi ---------- */
+.plist{list-style:none}
+.prow{display:grid;grid-template-columns:180px 1fr 140px 120px 170px;align-items:center;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .4s}
+.prow .ph{aspect-ratio:4/3}
+.prow .nm{font-size:clamp(20px,2.2vw,30px);font-weight:400;letter-spacing:.01em;transition:transform .4s}
+.prow .meta{font-size:13px;color:var(--muted)}
+.prow .go{justify-self:end;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;display:flex;gap:10px;align-items:center}
+.prow .go .ar{transition:transform .3s}
+.prow:hover .ph img{transform:scale(1.06)}
+.prow:hover .nm{transform:translateX(8px)}
+.prow:hover .go .ar{transform:translateX(5px)}
+.all-link{display:flex;justify-content:flex-end;margin-top:40px}
+.all-link .btn:hover{background:var(--ink);color:var(--bg)}
+
+/* ---------- proje ızgarası ---------- */
+.filters{display:flex;gap:26px;flex-wrap:wrap;margin:44px 0 36px}
+.filters button{background:none;border:0;font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;padding:4px 0;border-bottom:1px solid transparent;transition:.3s}
+.filters button.on,.filters button:hover{color:var(--ink);border-color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,64px) clamp(20px,3vw,44px)}
+.card .ph{aspect-ratio:4/3}
+.card:nth-child(4n+2),.card:nth-child(4n+3){}
+.card:hover .ph img{transform:scale(1.05)}
+.card-b{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;gap:16px}
+.card-b h3{font-weight:400;font-size:20px}
+.card-b span{font-size:13px;color:var(--muted);white-space:nowrap}
+.card .cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.card.hide{display:none}
+
+/* ---------- proje detay ---------- */
+.d-hero{height:88vh;min-height:480px}
+.d-hero .ph{height:100%}
+.d-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,6vw,100px);padding:clamp(50px,8vw,100px) 0 clamp(40px,6vw,80px)}
+.d-head h1{font-weight:300;font-size:clamp(36px,5vw,72px);line-height:1.02;letter-spacing:.02em}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;align-self:end}
+.facts dt{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts dd{font-size:15px}
+.d-text{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,6vw,100px);padding-bottom:clamp(60px,8vw,110px)}
+.d-text .body p{font-size:clamp(16px,1.25vw,19px);font-weight:300;line-height:1.75;margin-bottom:1.2em;max-width:62ch}
+.d-text .credit{font-size:13px;color:var(--muted);align-self:start;border-top:1px solid var(--line);padding-top:16px}
+.gallery{margin-bottom:clamp(70px,10vw,140px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,24px)}
+.gallery .ph{aspect-ratio:5/4;cursor:zoom-in}
+.gallery .ph.wide{aspect-ratio:16/9}
+.gallery .ph.wide.ok{aspect-ratio:auto}
+.gallery .ph.wide.ok img{height:auto}
+.next{display:block;border-top:1px solid var(--ink);padding:40px 0 clamp(60px,8vw,100px)}
+.next .nm{font-weight:300;font-size:clamp(32px,6vw,84px);line-height:1.05;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:10px}
+.next .ar{transition:transform .4s}
+.next:hover .ar{transform:translateX(12px)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(15,15,14,.96);display:none;align-items:center;justify-content:center;padding:4vw}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;font:inherit;font-size:13px;letter-spacing:.2em;cursor:pointer;padding:16px}
+.lb .x{top:10px;right:14px}.lb .pv{left:10px;top:50%}.lb .nx{right:10px;top:50%}
+
+/* ---------- hakkımızda ---------- */
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(30px,6vw,110px);margin-top:clamp(50px,7vw,90px)}
+.about .lead{font-size:clamp(20px,2vw,28px);font-weight:300;line-height:1.45}
+.about .body p{font-weight:300;font-size:17px;line-height:1.8;margin-bottom:1.2em;color:#2c2b28}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:32px;margin-top:40px}
+.team .ph{aspect-ratio:3/4;margin-bottom:14px}
+.team h4{font-weight:500;font-size:16px}.team span{font-size:13px;color:var(--muted)}
+
+/* ---------- iletişim ---------- */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:clamp(50px,7vw,90px);border-top:1px solid var(--ink);padding-top:30px}
+.contact .v{font-size:clamp(17px,1.5vw,21px);font-weight:300;margin-top:10px;line-height:1.55}
+.contact a.v:hover{text-decoration:underline;text-underline-offset:4px}
+.map{margin-top:60px;aspect-ratio:21/9;filter:grayscale(1) contrast(1.05)}
+.map iframe{width:100%;height:100%;border:0}
+
+/* ---------- instagram şeridi ---------- */
+.insta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 0}
+.insta p{font-size:clamp(22px,2.6vw,36px);font-weight:300}
+.insta .btn:hover{background:var(--ink);color:var(--bg)}
+
+/* ---------- footer ---------- */
+.ftr{padding:70px var(--pad) 34px;background:var(--ink);color:#d8d5cd}
+.ftr-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px}
+.ftr .logo{color:#fff;display:inline-block}
+.ftr h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7f7c74;font-weight:500;margin-bottom:14px}
+.ftr p,.ftr a{font-size:14px;line-height:1.8}
+.ftr a:hover{color:#fff}
+.ftr-bot{display:flex;justify-content:space-between;border-top:1px solid #2e2d2a;padding-top:24px;font-size:12px;color:#7f7c74;letter-spacing:.06em}
+.ftr-bot a{font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+
+/* ---------- görünme animasyonu ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- mobil ---------- */
+@media (max-width:900px){
+  .nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:30px;opacity:0;pointer-events:none;transition:opacity .35s}
+  .nav a{font-size:20px}
+  .menu-open .nav{opacity:1;pointer-events:auto}
+  .menu-open .hdr{color:var(--ink)}
+  .burger{display:block;z-index:60}
+  .prow{grid-template-columns:110px 1fr;gap:6px 18px;padding:18px 0}
+  .prow .ph{grid-row:1/5;align-self:start}
+  .prow .ph::after{content:""}
+  .prow .meta,.prow .go{justify-self:start;font-size:12px}
+  .pgrid{grid-template-columns:1fr}
+  .d-head,.d-text,.about{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .gallery .ph.ok,.gallery .ph.wide.ok{aspect-ratio:auto}
+  .gallery .ph.ok img{height:auto}
+  .contact{grid-template-columns:1fr}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .ftr-bot{flex-direction:column;gap:12px}
+}
