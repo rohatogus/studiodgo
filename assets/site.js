@@ -133,7 +133,7 @@
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
         <h1 class="page-title">${u("projeler")}</h1>
-        ${kats.length > 1 ? `<div class="filters"><button class="on" data-k="">${u("tumu")}</button>${kats.map(k => `<button data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>` : `<div style="height:50px"></div>`}
+        ${kats.length > 1 ? `<div class="filters"><button class="on" data-k="">${u("tumu")}</button>${kats.map(k => `<button data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>` : `<div style="height:36px"></div>`}
         <div class="pgrid">${P.map(p => `
           <a class="card rv" href="${link(p)}" data-k="${esc(t(p.kategori))}">
             ${gorsel(p.kapak, p.ad)}
