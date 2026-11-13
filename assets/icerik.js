@@ -27,7 +27,7 @@ window.SITE = {
   },
 
   sosyal: {
-    instagram: "https://www.instagram.com/",
+    instagram: "https://www.instagram.com/studiodgo/",
     linkedin: "",
     behance: ""
   }
