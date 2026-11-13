@@ -9,12 +9,12 @@
   /* ---------- DİL (TR / EN / NL) ---------- */
   const DILLER = ["tr", "en", "nl"];
   const urlDil = new URLSearchParams(location.search).get("lang");
-  let kayitliDil = null; try { kayitliDil = localStorage.getItem("dgo-lang"); } catch (e) {}
-  const L = DILLER.includes(urlDil) ? urlDil : DILLER.includes(kayitliDil) ? kayitliDil : "tr";
-  if (urlDil && DILLER.includes(urlDil)) { try { localStorage.setItem("dgo-lang", urlDil); } catch (e) {} }
+  let kayitliDil = null; try { kayitliDil = sessionStorage.getItem("dgo-lang"); } catch (e) {}
+  const L = DILLER.includes(urlDil) ? urlDil : DILLER.includes(kayitliDil) ? kayitliDil : "en";
+  if (urlDil && DILLER.includes(urlDil)) { try { sessionStorage.setItem("dgo-lang", urlDil); } catch (e) {} }
   document.documentElement.lang = L;
   // içerik metni: {tr,en,nl} nesnesi ya da düz metin
-  const t = v => (v && typeof v === "object" && !Array.isArray(v) && ("tr" in v || "en" in v || "nl" in v)) ? (v[L] ?? v.tr) : v;
+  const t = v => (v && typeof v === "object" && !Array.isArray(v) && ("tr" in v || "en" in v || "nl" in v)) ? (v[L] ?? v.en ?? v.tr) : v;
   const UI = {
     projeler:   { tr: "Projeler", en: "Projects", nl: "Projecten" },
     hakkimizda: { tr: "Hakkımızda", en: "About", nl: "Over ons" },
@@ -71,7 +71,7 @@
     </header>`);
   const hdr = $(".hdr");
   document.querySelectorAll(".langs button").forEach(b => b.onclick = () => {
-    try { localStorage.setItem("dgo-lang", b.dataset.lang); } catch (e) {}
+    try { sessionStorage.setItem("dgo-lang", b.dataset.lang); } catch (e) {}
     const url = new URL(location.href); url.searchParams.set("lang", b.dataset.lang); location.href = url.toString();
   });
   $(".burger").onclick = () => document.body.classList.toggle("menu-open");
