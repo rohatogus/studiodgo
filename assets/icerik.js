@@ -49,27 +49,6 @@ window.SITE = {
 
 window.PROJELER = [
   {
-    slug: "az-house-kuzguncuk",
-    ad: "AZ House Kuzguncuk",
-    yil: "2026",
-    konum: "Kuzguncuk, İstanbul",
-    kategori: "İç Mimarlık",
-    alan: "",
-    durum: "",
-    kapak: "images/az-house-kuzguncuk/kapak.jpg",
-    galeri: [
-      { src: "images/az-house-kuzguncuk/01.jpg", genis: true },
-      "images/az-house-kuzguncuk/02.jpg",
-      "images/az-house-kuzguncuk/03.jpg",
-      { src: "images/az-house-kuzguncuk/04.jpg", genis: true },
-      "images/az-house-kuzguncuk/05.jpg",
-      "images/az-house-kuzguncuk/06.jpg",
-      { src: "images/az-house-kuzguncuk/07.jpg", genis: true }
-    ],
-    aciklama: [],
-    fotograf: ""
-  },
-  {
     slug: "eu-house-ulus",
     ad: "EU House Ulus",
     yil: "2026",
@@ -93,6 +72,27 @@ window.PROJELER = [
       { src: "images/eu-house-ulus/12.jpg", genis: true },
       "images/eu-house-ulus/13.jpg",
       "images/eu-house-ulus/14.jpg"
+    ],
+    aciklama: [],
+    fotograf: ""
+  },
+  {
+    slug: "az-house-kuzguncuk",
+    ad: "AZ House Kuzguncuk",
+    yil: "2026",
+    konum: "Kuzguncuk, İstanbul",
+    kategori: "İç Mimarlık",
+    alan: "",
+    durum: "",
+    kapak: "images/az-house-kuzguncuk/kapak.jpg",
+    galeri: [
+      { src: "images/az-house-kuzguncuk/01.jpg", genis: true },
+      "images/az-house-kuzguncuk/02.jpg",
+      "images/az-house-kuzguncuk/03.jpg",
+      { src: "images/az-house-kuzguncuk/04.jpg", genis: true },
+      "images/az-house-kuzguncuk/05.jpg",
+      "images/az-house-kuzguncuk/06.jpg",
+      { src: "images/az-house-kuzguncuk/07.jpg", genis: true }
     ],
     aciklama: [],
     fotograf: ""
