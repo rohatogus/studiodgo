@@ -22,7 +22,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* ---------- header ---------- */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);transition:background .4s,color .4s,padding .4s}
-.hdr.solid{background:rgba(245,244,240,.94);backdrop-filter:blur(8px);color:var(--ink);padding:16px var(--pad);border-bottom:1px solid var(--line)}
+.hdr.solid{background:rgba(245,244,240,.97);color:var(--ink);padding:16px var(--pad);border-bottom:1px solid var(--line)}
 .hdr.over{color:#fff}
 .logo{display:block;line-height:0}
 .logo svg{height:40px;width:auto;overflow:visible}
@@ -32,6 +32,14 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .hlogo svg{height:clamp(130px,24vh,250px);width:auto;overflow:visible}
 .hlogo svg path[stroke]{stroke-width:2.2px;vector-effect:non-scaling-stroke}
 .flogo svg{height:96px}
+.plogo{display:block;width:max-content;line-height:0;color:var(--ink);margin-bottom:clamp(36px,5vw,64px)}
+.plogo svg{height:clamp(90px,10vw,130px);width:auto;overflow:visible}
+.plogo svg path[stroke]{stroke-width:1.5px;vector-effect:non-scaling-stroke}
+.plogo:hover{opacity:.7}
+.mlogo{display:none!important}
+.mlogo svg{height:120px;width:auto;overflow:visible}
+.mlogo svg path[stroke]{stroke-width:1.5px;vector-effect:non-scaling-stroke}
+.mlogo::after{display:none}
 .flogo svg path[stroke]{stroke-width:1.4px}
 .nav{display:flex;gap:38px}
 .nav a{font-size:12px;letter-spacing:.22em;font-weight:500;position:relative;padding:4px 0}
@@ -160,11 +168,12 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* ---------- mobil ---------- */
 @media (max-width:900px){
-  .nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:30px;opacity:0;pointer-events:none;transition:opacity .35s}
+  .nav{position:fixed;inset:0;height:100vh;z-index:55;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:30px;opacity:0;pointer-events:none;transition:opacity .35s}
   .nav a{font-size:20px}
   .menu-open .nav{opacity:1;pointer-events:auto}
   .menu-open .hdr{color:var(--ink)}
   .burger{display:block;z-index:60}
+  .mlogo{display:block!important;line-height:0;margin-bottom:24px}
   .prow{grid-template-columns:110px 1fr;gap:6px 18px;padding:18px 0}
   .prow .ph{grid-row:1/5;align-self:start}
   .prow .ph::after{content:""}

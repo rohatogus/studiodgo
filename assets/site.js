@@ -10,6 +10,7 @@
   const gorsel = (src, alt, cls = "") =>
     `<div class="ph ${cls}" data-label="${esc(alt || "Görsel")}">${src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" class="loading" onload="this.classList.remove('loading');this.parentNode.classList.add('ok')" onerror="this.remove()">` : ""}</div>`;
   const link = p => `proje.html#${encodeURIComponent(p.slug)}`;
+  const sayfaLogo = () => `<a href="index.html" class="plogo rv" aria-label="${esc(S.ad)}">${window.LOGO_TAM}</a>`;
 
   /* ---------- header & footer ---------- */
   const navItems = [["projeler.html", "PROJELER", "projeler"], ["hakkimizda.html", "HAKKIMIZDA", "hakkimizda"], ["iletisim.html", "İLETİŞİM", "iletisim"]];
@@ -17,7 +18,7 @@
   document.body.insertAdjacentHTML("afterbegin", `
     <header class="hdr ${overHero ? "over" : "solid"}">
       <a href="index.html" class="logo" aria-label="${esc(S.ad)}">${window.LOGO_ISARET}</a>
-      <nav class="nav">${navItems.map(([h, t, k]) => `<a href="${h}" class="${k === sayfa || (k === "projeler" && sayfa === "proje") ? "on" : ""}">${t}</a>`).join("")}</nav>
+      <nav class="nav"><a href="index.html" class="mlogo" aria-label="${esc(S.ad)}">${window.LOGO_TAM}</a>${navItems.map(([h, t, k]) => `<a href="${h}" class="${k === sayfa || (k === "projeler" && sayfa === "proje") ? "on" : ""}">${t}</a>`).join("")}</nav>
       <button class="burger" aria-label="Menü"><span></span><span></span></button>
     </header>`);
   const hdr = $(".hdr");
@@ -77,6 +78,7 @@
     const kats = [...new Set(P.map(p => p.kategori).filter(Boolean))];
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
+        ${sayfaLogo()}
         <span class="eyebrow">Seçilmiş İşler</span>
         <h1 class="page-title" style="margin-top:14px">Projeler</h1>
         ${kats.length > 1 ? `<div class="filters"><button class="on" data-k="">Tümü</button>${kats.map(k => `<button data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>` : `<div style="height:50px"></div>`}
@@ -111,7 +113,7 @@
       <section class="d-hero">${gorsel(p.kapak, p.ad)}</section>
       <div class="wrap">
         <section class="d-head">
-          <div class="rv"><span class="eyebrow">${esc(p.kategori || "Proje")}</span><h1 style="margin-top:14px">${esc(p.ad)}</h1></div>
+          <div class="rv">${sayfaLogo()}<span class="eyebrow">${esc(p.kategori || "Proje")}</span><h1 style="margin-top:14px">${esc(p.ad)}</h1></div>
           <dl class="facts rv">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
         </section>
         ${(p.aciklama || []).length || p.fotograf ? `<section class="d-text">
@@ -136,6 +138,7 @@
     const [ilk, ...diger] = S.hakkimizda;
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
+        ${sayfaLogo()}
         <span class="eyebrow">Ofis</span>
         <h1 class="page-title" style="margin-top:14px">Hakkımızda</h1>
         <div class="about">
@@ -151,6 +154,7 @@
   if (sayfa === "iletisim") {
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
+        ${sayfaLogo()}
         <span class="eyebrow">Bize Ulaşın</span>
         <h1 class="page-title" style="margin-top:14px">İletişim</h1>
         <div class="contact">
