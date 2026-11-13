@@ -51,7 +51,7 @@ window.PROJELER = [
   {
     slug: "az-house-kuzguncuk",
     ad: "AZ House Kuzguncuk",
-    yil: "",
+    yil: "2026",
     konum: "Kuzguncuk, İstanbul",
     kategori: "İç Mimarlık",
     alan: "",
@@ -72,7 +72,7 @@ window.PROJELER = [
   {
     slug: "eu-house-ulus",
     ad: "EU House Ulus",
-    yil: "",
+    yil: "2026",
     konum: "Ulus, İstanbul",
     kategori: "İç Mimarlık",
     alan: "",
