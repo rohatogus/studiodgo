@@ -78,7 +78,6 @@
     const kats = [...new Set(P.map(p => p.kategori).filter(Boolean))];
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
-        ${sayfaLogo()}
         <span class="eyebrow">Seçilmiş İşler</span>
         <h1 class="page-title" style="margin-top:14px">Projeler</h1>
         ${kats.length > 1 ? `<div class="filters"><button class="on" data-k="">Tümü</button>${kats.map(k => `<button data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>` : `<div style="height:50px"></div>`}
@@ -113,7 +112,7 @@
       <section class="d-hero">${gorsel(p.kapak, p.ad)}</section>
       <div class="wrap">
         <section class="d-head">
-          <div class="rv">${sayfaLogo()}<span class="eyebrow">${esc(p.kategori || "Proje")}</span><h1 style="margin-top:14px">${esc(p.ad)}</h1></div>
+          <div class="rv"><span class="eyebrow">${esc(p.kategori || "Proje")}</span><h1 style="margin-top:14px">${esc(p.ad)}</h1></div>
           <dl class="facts rv">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
         </section>
         ${(p.aciklama || []).length || p.fotograf ? `<section class="d-text">
@@ -138,7 +137,6 @@
     const H = S.hakkimizda;
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
-        ${sayfaLogo()}
         <span class="eyebrow">Hakkımızda</span>
         <h1 class="page-title" style="margin-top:14px">${esc(H.baslik)}</h1>
         <div class="about">
