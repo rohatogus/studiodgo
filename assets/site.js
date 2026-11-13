@@ -32,7 +32,6 @@
     incele:     { tr: "Projeyi İncele", en: "View Project", nl: "Bekijk project" },
     tumProjeler:{ tr: "Tüm Projeler", en: "All Projects", nl: "Alle projecten" },
     instagram:  { tr: "Yolculuğumuzu Instagram'da takip edin.", en: "Follow our journey on Instagram.", nl: "Volg onze reis op Instagram." },
-    secilmis:   { tr: "Seçilmiş İşler", en: "Selected Work", nl: "Geselecteerd werk" },
     tumu:       { tr: "Tümü", en: "All", nl: "Alle" },
     konum:      { tr: "Konum", en: "Location", nl: "Locatie" },
     yil:        { tr: "Yıl", en: "Year", nl: "Jaar" },
@@ -133,8 +132,7 @@
     const kats = [...new Set(P.map(p => t(p.kategori)).filter(Boolean))];
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
-        <span class="eyebrow">${u("secilmis")}</span>
-        <h1 class="page-title" style="margin-top:14px">${u("projeler")}</h1>
+        <h1 class="page-title">${u("projeler")}</h1>
         ${kats.length > 1 ? `<div class="filters"><button class="on" data-k="">${u("tumu")}</button>${kats.map(k => `<button data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>` : `<div style="height:50px"></div>`}
         <div class="pgrid">${P.map(p => `
           <a class="card rv" href="${link(p)}" data-k="${esc(t(p.kategori))}">
