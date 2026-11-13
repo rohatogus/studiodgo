@@ -159,7 +159,6 @@
   if (sayfa === "iletisim") {
     main.innerHTML = `
       <section class="wrap page-top" style="padding-bottom:clamp(70px,10vw,140px)">
-        ${sayfaLogo()}
         <span class="eyebrow">İletişim</span>
         <h1 class="contact-title">Bize ulaşın</h1>
         <p class="contact-intro rv">Yeni bir projeniz mi var? Projeniz hakkında konuşmak, bilgi almak ya da teklif istemek için bize e-posta ile yazabilirsiniz. En kısa sürede size dönüş yapacağız.</p>
