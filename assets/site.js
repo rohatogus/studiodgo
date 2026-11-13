@@ -53,7 +53,7 @@
         ${gorsel(one && one.kapak, one ? one.ad : "")}
         <div class="hero-txt">
           <div><h1 class="hlogo" aria-label="${esc(S.ad)}">${window.LOGO_TAM}</h1><div class="tag">${esc(S.slogan)}</div></div>
-          ${one ? `<a href="${link(one)}" class="btn">${esc(one.ad)} ${AR}</a>` : ""}
+          <a href="projeler.html" class="btn">Projeler ${AR}</a>
         </div>
         <div class="scroll-cue"></div>
       </section>
