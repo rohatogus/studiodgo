@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root{
   --bg:#f5f4f0;
@@ -42,11 +42,11 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .mlogo::after{display:none}
 .flogo svg path[stroke]{stroke-width:1.4px}
 .nav{display:flex;gap:38px}
-.nav a{font-size:12px;letter-spacing:.22em;font-weight:450;position:relative;padding:4px 0}
+.nav a{font-size:12px;letter-spacing:.22em;font-weight:500;position:relative;padding:4px 0}
 .nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:currentColor;transition:width .35s}
 .nav a:hover::after,.nav a.on::after{width:100%}
 .langs{display:flex;align-items:center;gap:2px;margin-left:-8px;padding-left:22px;border-left:1px solid currentColor;border-left-color:color-mix(in srgb,currentColor 35%,transparent)}
-.langs button{background:none;border:0;color:inherit;font:inherit;font-size:11px;letter-spacing:.16em;font-weight:450;padding:8px 6px;cursor:pointer;opacity:.55;transition:opacity .25s}
+.langs button{background:none;border:0;color:inherit;font:inherit;font-size:11px;letter-spacing:.16em;font-weight:500;padding:8px 6px;cursor:pointer;opacity:.55;transition:opacity .25s}
 .langs button:hover{opacity:1}
 .langs button.on{opacity:1;text-decoration:underline;text-underline-offset:5px}
 .burger{display:none;background:none;border:0;color:inherit;cursor:pointer;width:28px;height:18px;position:relative}
@@ -73,9 +73,9 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 /* ---------- genel bölüm ---------- */
 .wrap{padding:0 var(--pad)}
 .sec{padding-top:clamp(70px,11vw,150px);padding-bottom:clamp(70px,11vw,150px)}
-.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:450}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
-.sec-head h2{font-weight:350;font-size:clamp(22px,2.4vw,32px);letter-spacing:.04em}
+.sec-head h2{font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:.04em}
 .page-top{padding-top:clamp(104px,13vh,124px)}
 .page-title{font-weight:300;font-size:clamp(40px,7vw,96px);letter-spacing:.03em;line-height:1}
 
@@ -83,9 +83,9 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .plist{list-style:none}
 .prow{display:grid;grid-template-columns:180px 1fr 140px 120px 170px;align-items:center;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .4s}
 .prow .ph{aspect-ratio:4/3}
-.prow .nm{font-size:clamp(20px,2.2vw,30px);font-weight:350;letter-spacing:.01em;transition:transform .4s}
+.prow .nm{font-size:clamp(20px,2.2vw,30px);font-weight:400;letter-spacing:.01em;transition:transform .4s}
 .prow .meta{font-size:13px;color:var(--muted)}
-.prow .go{justify-self:end;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:450;display:flex;gap:10px;align-items:center}
+.prow .go{justify-self:end;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;display:flex;gap:10px;align-items:center}
 .prow .go .ar{transition:transform .3s}
 .prow:hover .ph img{transform:scale(1.06)}
 .prow:hover .nm{transform:translateX(8px)}
@@ -102,7 +102,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card:nth-child(4n+2),.card:nth-child(4n+3){}
 .card:hover .ph img{transform:scale(1.05)}
 .card-b{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;gap:16px}
-.card-b h3{font-weight:350;font-size:20px}
+.card-b h3{font-weight:400;font-size:20px}
 .card-b span{font-size:13px;color:var(--muted);white-space:nowrap}
 .card .cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .card.hide{display:none}
@@ -143,7 +143,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .motto{margin-top:clamp(80px,10vw,140px);border-top:1px solid var(--ink);padding-top:28px}
 .motto p{font-size:clamp(26px,3.4vw,48px);font-weight:300;line-height:1.2;margin-top:12px;letter-spacing:.01em}
 .team .ph{aspect-ratio:3/4;margin-bottom:14px}
-.team h4{font-weight:450;font-size:16px}.team span{font-size:13px;color:var(--muted)}
+.team h4{font-weight:500;font-size:16px}.team span{font-size:13px;color:var(--muted)}
 
 /* ---------- iletişim ---------- */
 .contact-title{font-weight:300;font-size:clamp(30px,3.6vw,48px);line-height:1.15;letter-spacing:.01em;margin:14px 0 0}
