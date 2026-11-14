@@ -26,7 +26,6 @@
     adres:      { tr: "Adres", en: "Address", nl: "Adres" },
     takip:      { tr: "Takip Edin", en: "Follow", nl: "Volg ons" },
     haklar:     { tr: "Tüm hakları saklıdır.", en: "All rights reserved.", nl: "Alle rechten voorbehouden." },
-    yukari:     { tr: "Sayfanın başına dön", en: "Back to top", nl: "Terug naar boven" },
     proje:      { tr: "Proje", en: "Project", nl: "Project" },
     projeSayi:  { tr: n => `${n} Proje`, en: n => `${n} ${n === 1 ? "Project" : "Projects"}`, nl: n => `${n} ${n === 1 ? "project" : "projecten"}` },
     incele:     { tr: "Projeyi İncele", en: "View Project", nl: "Bekijk project" },
@@ -89,10 +88,9 @@
         <div><h5>${u("iletisim")}</h5><p>${I.telefon ? `<a href="tel:${I.telefon.replace(/\s/g, "")}">${esc(I.telefon)}</a><br>` : ""}<a href="mailto:${esc(I.eposta)}">${esc(I.eposta)}</a></p></div>
         <div><h5>${u("takip")}</h5><p>${sosyalLinkler.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join("<br>")}</p></div>
       </div>
-      <div class="ftr-bot"><span>© ${new Date().getFullYear()} ${esc(S.ad)}. ${u("haklar")}</span><button type="button" class="totop" aria-label="${esc(u("yukari"))}">↑</button></div>
+      <div class="ftr-bot"><span>© ${new Date().getFullYear()} ${esc(S.ad)}. ${u("haklar")}</span></div>
     </footer>`);
 
-  $(".totop").onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const BASLIK = { anasayfa: `${S.ad} | ${u("baslikAna")}`, projeler: `${u("projeler")} — ${S.ad}`, hakkimizda: `${u("hakkimizda")} — ${S.ad}`, iletisim: `${u("iletisim")} — ${S.ad}` };
   if (BASLIK[sayfa]) document.title = BASLIK[sayfa];

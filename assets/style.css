@@ -169,8 +169,6 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .ftr p,.ftr a{font-size:14px;line-height:1.8}
 .ftr a:hover{color:#fff}
 .ftr-bot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2e2d2a;padding-top:24px;font-size:12px;color:#7f7c74;letter-spacing:.06em}
-.totop{background:none;border:1px solid #3a3935;color:#d8d5cd;width:40px;height:40px;font-size:16px;cursor:pointer;transition:.3s;font-family:inherit}
-.totop:hover{background:#d8d5cd;color:var(--ink);border-color:#d8d5cd}
 
 /* ---------- görünme animasyonu ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
